@@ -14,5 +14,6 @@ def build_ann_model():
         loss="sparse_categorical_crossentropy",
         metrics=["accuracy"]
     )
+    
 
     return model
