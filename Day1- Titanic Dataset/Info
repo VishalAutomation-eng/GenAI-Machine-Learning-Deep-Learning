@@ -1,0 +1,41 @@
+What I Did
+
+Loaded real Kaggle Titanic dataset
+
+Performed data cleaning & preprocessing
+
+Handled missing values safely (dataset-agnostic)
+
+Conducted univariate, bivariate, and multivariate EDA
+
+Engineered new features (family_size, is_alone)
+
+Generated automated Y-Profiling report
+
+Followed Pandas 3.0 safe practices
+
+🔹 Key Insights
+
+Females had significantly higher survival rates
+
+First-class passengers survived more
+
+Higher fare correlated with higher survival
+
+Passengers with small families survived more
+
+Solo travelers had lower survival probability
+
+🔹 Tools & Libraries
+
+Python
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+ydata-profiling
