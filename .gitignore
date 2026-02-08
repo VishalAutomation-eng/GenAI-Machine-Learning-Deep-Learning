@@ -68,3 +68,5 @@ dist/
 # Ignore compiled Python files in subfolders
 # ===============================
 **/__pycache__/
+
+.env
