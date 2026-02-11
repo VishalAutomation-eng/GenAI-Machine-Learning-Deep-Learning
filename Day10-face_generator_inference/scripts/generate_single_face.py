@@ -4,26 +4,33 @@ import os
 from pathlib import Path
 
 # --------------------------------------------------
-# Force CPU
+# Force CPU (safe on macOS)
 # --------------------------------------------------
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # --------------------------------------------------
-# Resolve paths safely
+# Resolve paths safely (OS-independent)
 # --------------------------------------------------
 CURRENT_FILE = Path(__file__).resolve()
-PROJECT_ROOT = CURRENT_FILE.parent.parent
+PROJECT_ROOT = CURRENT_FILE.parent.parent   # Day10-face_generator_inference/
 
-MODELS_DIR = Path("/home/vkpande/GenAI-Machine-Learning-Deep-Learning/Day10-face_generator_inference/models")
-OUTPUTS_DIR = Path("/home/vkpande/GenAI-Machine-Learning-Deep-Learning/Day10-face_generator_inference/outputd")
+MODELS_DIR = PROJECT_ROOT / "models"
+OUTPUTS_DIR = PROJECT_ROOT / "outputd"
 
-WEIGHTS_PATH = MODELS_DIR / "generator_100.h5"
+WEIGHTS_PATH = MODELS_DIR / "generator_10.h5"
 OUTPUT_PATH = OUTPUTS_DIR / "single_image.png"
 
 print("🔍 Loading FULL model from:", WEIGHTS_PATH)
 
+# --------------------------------------------------
+# Validation
+# --------------------------------------------------
 if not WEIGHTS_PATH.exists():
-    raise FileNotFoundError(f"❌ Model file not found: {WEIGHTS_PATH}")
+    raise FileNotFoundError(
+        f"❌ Model file not found.\n"
+        f"Expected at: {WEIGHTS_PATH}\n"
+        f"Please place generator_10.h5 inside the models/ directory."
+    )
 
 OUTPUTS_DIR.mkdir(exist_ok=True)
 
@@ -44,9 +51,10 @@ generated_image = (generated_image + 1) / 2.0
 # --------------------------------------------------
 # Save output
 # --------------------------------------------------
+plt.figure(figsize=(4, 4))
 plt.imshow(generated_image[0])
 plt.axis("off")
-plt.savefig(OUTPUT_PATH)
+plt.savefig(OUTPUT_PATH, bbox_inches="tight", pad_inches=0)
 plt.show()
 
 print(f"✅ Image saved at: {OUTPUT_PATH}")
