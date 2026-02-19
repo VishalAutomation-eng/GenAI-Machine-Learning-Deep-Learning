@@ -1,0 +1,11 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+OLLAMA_URL = os.getenv("OLLAMA_URL")
+MODEL = os.getenv("MODEL")
+
+DATA_PATH = "data/Resume.csv"
+OUTPUT_PATH = "outputs/extracted_json"
+

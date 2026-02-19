@@ -1,9 +1,0 @@
-langchain
-langchain-community
-langchain-core
-langchain-chroma
-chromadb
-streamlit
-python-dotenv
-requests
-pandas

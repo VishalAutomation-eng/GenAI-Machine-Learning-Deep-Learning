@@ -1,0 +1,5 @@
+This project demonstrates the CrewAI framework with multiple agents,
+including content planners, writers, editors, and summarization agents.
+Agents collaborate through defined tasks and sequential processes.
+The system integrates a custom Ollama LLM endpoint using gpt-oss:120b.
+...

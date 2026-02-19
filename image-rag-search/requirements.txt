@@ -1,0 +1,11 @@
+requests
+python-dotenv
+tqdm
+pillow
+
+langchain
+langchain-community
+langchain-chroma
+chromadb
+
+sentence-transformers

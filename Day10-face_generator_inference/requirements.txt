@@ -1,5 +1,0 @@
-tensorflow-macos
-tensorflow-metal
-numpy
-matplotlib
-imageio
